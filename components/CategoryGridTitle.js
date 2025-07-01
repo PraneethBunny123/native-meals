@@ -1,6 +1,6 @@
 import { Pressable, View, Text, StyleSheet, Platform } from "react-native";
 
-export default function CategoryGridTitle({title, color}) {
+export default function CategoryGridTitle({title, color, handleOnPress}) {
     return (
         <View style={styles.gridItem}>
             <Pressable 
@@ -9,6 +9,7 @@ export default function CategoryGridTitle({title, color}) {
                     pressed ? styles.buttonPressed : null
                 ]} 
                 android_ripple={{color: '#ccc'}} 
+                onPress={handleOnPress}
             >
                 <View style={[styles.innerContainer, {backgroundColor: color}]}>
                     <Text style={styles.title}>{title}</Text>
