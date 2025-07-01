@@ -3,13 +3,9 @@ import { StyleSheet, Text, View } from 'react-native';
 import CategoriesScreen from './screens/CategoriesScreen';
 
 export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Meals</Text>
-      <CategoriesScreen />
-      <StatusBar style="auto" />
-    </View>
-  );
+    return (
+        <CategoriesScreen />
+    );
 }
 
 const styles = StyleSheet.create({
