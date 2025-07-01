@@ -1,4 +1,4 @@
-import { Pressable, View } from "react-native";
+import { Pressable, View, Text } from "react-native";
 
 export default function CategoryGridTitle({title, color}) {
     return (
