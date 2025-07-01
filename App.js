@@ -8,14 +8,14 @@ const Stack = createNativeStackNavigator()
 
 export default function App() {
     return (
-        <View>
+        <>
             <StatusBar style='light' />
             <NavigationContainer>
                 <Stack.Navigator>
-                    <Stack.Screen name='MealsCategories' component={CategoriesScreen} />
+                    <Stack.Screen name="MealsCategories" component={CategoriesScreen} />
                 </Stack.Navigator>
             </NavigationContainer>
-        </View>
+        </>
     );
 }
 
