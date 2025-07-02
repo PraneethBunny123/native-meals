@@ -1,17 +1,22 @@
 import { View, Text, FlatList } from "react-native";
 import { CATEGORIES, MEALS } from "../data/dummy-data";
 import MealItem from "../components/MealItem";
+import { useEffect } from "react";
 
 export default function MealOverviewScreen({route, navigation}) {
     const categoryId = route.params.categoryId
 
     const displayedMeals = MEALS.filter(meal => meal.categoryIds.indexOf(categoryId) >= 0)
 
-    const categoryTitle = CATEGORIES.find(category => category.id === categoryId).title
+    
 
-    navigation.setOptions({
-        title: categoryTitle
-    })
+    useEffect(() => {
+        const categoryTitle = CATEGORIES.find(category => category.id === categoryId).title
+
+        navigation.setOptions({
+            title: categoryTitle
+        })
+    }, [categoryId, navigation])
 
     function mealOverviewItem(itemData) {
         const item = itemData.item
