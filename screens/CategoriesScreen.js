@@ -9,7 +9,9 @@ export default function CategoriesScreen({navigation}) {
     function categoryItem(itemData) {
 
         function handleOnPress() {
-            navigation.navigate("MealOverview")
+            navigation.navigate("MealOverview", {
+                categoryId: itemData.item.id
+            })
         }
 
         return (
