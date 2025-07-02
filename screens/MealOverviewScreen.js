@@ -18,12 +18,14 @@ export default function MealOverviewScreen({route, navigation}) {
         })
     }, [categoryId, navigation])
 
-    function handleMealItemPress() {
-        navigation.navigate("MealDetail")
-    }
-
     function mealOverviewItem(itemData) {
         const item = itemData.item
+
+        function handleMealItemPress() {
+            navigation.navigate("MealDetail", {
+                item: item
+            })
+        }
 
         const mealItemProps = {
             title: item.title,
