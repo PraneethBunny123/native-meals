@@ -9,7 +9,7 @@ export default function MealOverviewScreen({route}) {
 
     function mealOverviewItem(itemData) {
         return (
-            <MealItem title={itemData.item.title} />
+            <MealItem title={itemData.item.title} imageUrl={itemData.item.imageUrl} />
         )
     }
 
