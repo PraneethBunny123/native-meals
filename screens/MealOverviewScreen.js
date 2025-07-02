@@ -18,6 +18,10 @@ export default function MealOverviewScreen({route, navigation}) {
         })
     }, [categoryId, navigation])
 
+    function handleMealItemPress() {
+        navigation.navigate("MealDetail")
+    }
+
     function mealOverviewItem(itemData) {
         const item = itemData.item
 
@@ -30,7 +34,7 @@ export default function MealOverviewScreen({route, navigation}) {
         }
 
         return (
-            <MealItem {...mealItemProps} />
+            <MealItem {...mealItemProps} handleMealItemPress={handleMealItemPress} />
         )
     }
 

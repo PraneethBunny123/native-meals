@@ -2,7 +2,7 @@ import { StyleSheet } from "react-native";
 import { Image, Pressable, Text, Platform } from "react-native";
 import { View } from "react-native";
 
-export default function MealItem({title, imageUrl, affordability, complexity, duration}) {
+export default function MealItem({title, imageUrl, affordability, complexity, duration, handleMealItemPress}) {
     return (
         <View style={styles.mealItem} >
             <Pressable 
@@ -10,6 +10,7 @@ export default function MealItem({title, imageUrl, affordability, complexity, du
                 style={({pressed}) => 
                     pressed ? styles.buttonPressed : null
                 }  
+                onPress={handleMealItemPress}
             >
                 <View style={styles.innerContainer} >
                     <View>

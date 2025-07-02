@@ -1,0 +1,9 @@
+import { Text, View } from "react-native";
+
+export default function MealDetailScreen() {
+    return (
+        <View>
+            <Text>Meal detail</Text>
+        </View>
+    )
+}
