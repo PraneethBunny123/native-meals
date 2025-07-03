@@ -4,6 +4,7 @@ import MealDetails from "../components/MealDetails";
 import Subtitle from "../components/Subtitle";
 import List from "../components/List";
 import { useLayoutEffect } from "react";
+import IconButton from "../components/Icon";
 
 export default function MealDetailScreen({route, navigation}) {
     const mealId = route.params.id
@@ -17,7 +18,7 @@ export default function MealDetailScreen({route, navigation}) {
 
     useLayoutEffect(() => {
         navigation.setOptions({
-            headerRight: () => <Button title="Tap Me" onPress={handleTapMe} />
+            headerRight: () => <IconButton title="Tap Me" onPress={handleTapMe} />
         })
     }, [])
 
