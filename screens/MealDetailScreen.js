@@ -1,7 +1,7 @@
 import { FlatList, Image, StyleSheet, Text, View } from "react-native";
 import { MEALS } from "../data/dummy-data";
 import MealDetails from "../components/MealDetails";
-import Subtitle from "../components/MealDetail/Subtitle";
+import Subtitle from "../components/Subtitle";
 
 export default function MealDetailScreen({route}) {
     const mealId = route.params.id
@@ -10,7 +10,9 @@ export default function MealDetailScreen({route}) {
 
     function listRender(itemData) {
         return (
-            <Text>{itemData.item}</Text>
+            <View style={styles.ListItem}>
+                <Text style={styles.listItemText} >{itemData.item}</Text>
+            </View>
         )
     }
 
@@ -55,17 +57,16 @@ const styles = StyleSheet.create({
     detailText: {
         color:'white'
     },
-    subtitleContainer: {
-        marginHorizontal: 24,
+    ListItem: {
+        borderRadius: 6,
+        paddingHorizontal: 8,
+        paddingVertical: 4,
         marginVertical: 4,
-        padding: 6,
-        borderBottomColor: '#e2b497',
-        borderBottomWidth: 2
+        marginHorizontal: 12,
+        backgroundColor: '#e2b497'
     },
-    subtitle: {
-        color: '#e2b497',
-        fontSize: 18,
-        fontWeight: 'bold',
-        textAlign: 'center',
+    listItemText: {
+        color: '#351401',
+        textAlign: 'center'
     }
 })
