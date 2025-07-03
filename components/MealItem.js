@@ -1,6 +1,7 @@
 import { StyleSheet } from "react-native";
 import { Image, Pressable, Text, Platform } from "react-native";
 import { View } from "react-native";
+import MealDetails from "./MealDetails";
 
 export default function MealItem({title, imageUrl, affordability, complexity, duration, handleMealItemPress}) {
     return (
@@ -17,11 +18,11 @@ export default function MealItem({title, imageUrl, affordability, complexity, du
                         <Image source={{uri: imageUrl}} style={styles.image} />
                         <Text style={styles.title} >{title}</Text>
                     </View>
-                    <View style={styles.details} >
-                        <Text style={styles.detailItem} >{duration}</Text>
-                        <Text style={styles.detailItem} >{complexity.toUpperCase()}</Text>
-                        <Text style={styles.detailItem} >{affordability.toUpperCase()}</Text>
-                    </View>
+                    <MealDetails 
+                        affordability={affordability} 
+                        duration={duration}
+                        complexity={complexity}    
+                    />
                 </View>
             </Pressable>
         </View>
@@ -57,14 +58,4 @@ const styles = StyleSheet.create({
         fontSize: 18,
         margin: 8
     },
-    details: {
-        flexDirection: 'row',
-        alignItems: 'center',
-        justifyContent: 'center',
-        padding: 8
-    },
-    detailItem: {
-        marginHorizontal: 4,
-        fontSize: 12
-    }
 })

@@ -1,4 +1,4 @@
-import { Text, View } from "react-native";
+import { Image, Text, View } from "react-native";
 import { MEALS } from "../data/dummy-data";
 
 export default function MealDetailScreen({route}) {
@@ -8,6 +8,7 @@ export default function MealDetailScreen({route}) {
 
     return (
         <View>
+            <Image source={{uri: selectedMeal.imageUrl}} />
             <Text>Meal detail - {selectedMeal.title}</Text>
         </View>
     )
