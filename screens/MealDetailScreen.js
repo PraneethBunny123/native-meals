@@ -20,7 +20,8 @@ export default function MealDetailScreen({route}) {
             <MealDetails 
                 affordability={selectedMeal.affordability} 
                 duration={selectedMeal.duration}
-                complexity={selectedMeal.complexity}    
+                complexity={selectedMeal.complexity}  
+                textStyle={styles.detailText}  
             />
             <Text>Ingredients</Text>
             <FlatList 
