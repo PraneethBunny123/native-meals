@@ -1,4 +1,4 @@
-import { FlatList, Image, StyleSheet, Text, View } from "react-native";
+import { FlatList, Image, ScrollView, StyleSheet, Text, View } from "react-native";
 import { MEALS } from "../data/dummy-data";
 import MealDetails from "../components/MealDetails";
 import Subtitle from "../components/Subtitle";
@@ -17,7 +17,7 @@ export default function MealDetailScreen({route}) {
     }
 
     return (
-        <View>
+        <ScrollView>
             <Image style={styles.image} source={{uri: selectedMeal.imageUrl}} />
             <Text style={styles.title} >{selectedMeal.title}</Text>
             <MealDetails 
@@ -26,19 +26,23 @@ export default function MealDetailScreen({route}) {
                 complexity={selectedMeal.complexity}  
                 textStyle={styles.detailText}  
             />
-            <Subtitle>Ingredients</Subtitle>
-            <FlatList 
-                data={selectedMeal.ingredients}
-                keyExtractor={item => item}
-                renderItem={listRender}
-            />
-            <Subtitle>steps</Subtitle>
-            <FlatList 
-                data={selectedMeal.steps}
-                keyExtractor={item => item}
-                renderItem={listRender}
-            />
-        </View>
+            <View style={styles.listOuterContainer} >
+                <View style={styles.listContainer} >
+                    <Subtitle>Ingredients</Subtitle>
+                    <FlatList 
+                        data={selectedMeal.ingredients}
+                        keyExtractor={item => item}
+                        renderItem={listRender}
+                    />
+                    <Subtitle>steps</Subtitle>
+                    <FlatList 
+                        data={selectedMeal.steps}
+                        keyExtractor={item => item}
+                        renderItem={listRender}
+                    />
+                </View>
+            </View>
+        </ScrollView>
     )
 }
 
@@ -58,7 +62,7 @@ const styles = StyleSheet.create({
         color:'white'
     },
     ListItem: {
-        borderRadius: 6,
+        borderRadius: 60,
         paddingHorizontal: 8,
         paddingVertical: 4,
         marginVertical: 4,
@@ -68,5 +72,11 @@ const styles = StyleSheet.create({
     listItemText: {
         color: '#351401',
         textAlign: 'center'
+    },
+    listOuterContainer: {
+        alignItems: 'center'
+    },
+    listContainer: {
+        width: '80%'
     }
 })
