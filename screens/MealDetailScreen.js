@@ -18,7 +18,13 @@ export default function MealDetailScreen({route, navigation}) {
 
     useLayoutEffect(() => {
         navigation.setOptions({
-            headerRight: () => <IconButton title="Tap Me" handleIconPress={handleIconPress} />
+            headerRight: () => (
+                <IconButton 
+                    icon='star' 
+                    color='white' 
+                    handleIconPress={handleIconPress} 
+                />
+            )
         })
     }, [])
 
