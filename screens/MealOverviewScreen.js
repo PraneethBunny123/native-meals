@@ -23,7 +23,7 @@ export default function MealOverviewScreen({route, navigation}) {
 
         function handleMealItemPress() {
             navigation.navigate("MealDetail", {
-                item: item
+                id: item.id
             })
         }
 
