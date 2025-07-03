@@ -23,13 +23,17 @@ export default function MealDetailScreen({route}) {
                 complexity={selectedMeal.complexity}  
                 textStyle={styles.detailText}  
             />
-            <Text>Ingredients</Text>
+            <View style={styles.subtitleContainer} >
+                <Text style={styles.subtitle} >Ingredients</Text>
+            </View>
             <FlatList 
                 data={selectedMeal.ingredients}
                 keyExtractor={item => item}
                 renderItem={listRender}
             />
-            <Text>Steps</Text>
+            <View style={styles.subtitleContainer} >
+                <Text style={styles.subtitle} >Steps</Text>
+            </View>
             <FlatList 
                 data={selectedMeal.steps}
                 keyExtractor={item => item}
@@ -53,5 +57,17 @@ const styles = StyleSheet.create({
     },
     detailText: {
         color:'white'
+    },
+    subtitleContainer: {
+        padding: 6,
+        borderBottomColor: 'white',
+        borderBottomWidth: 2
+    },
+    subtitle: {
+        color: 'white',
+        fontSize: 18,
+        fontWeight: 'bold',
+        margin: 4,
+        textAlign: 'center',
     }
 })
