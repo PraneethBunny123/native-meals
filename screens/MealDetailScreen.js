@@ -9,14 +9,6 @@ export default function MealDetailScreen({route}) {
 
     const selectedMeal = MEALS.find(meal => meal.id === mealId)
 
-    function listRender(itemData) {
-        return (
-            <View style={styles.ListItem}>
-                <Text style={styles.listItemText} >{itemData.item}</Text>
-            </View>
-        )
-    }
-
     return (
         <ScrollView style={styles.rootContainer}>
             <Image style={styles.image} source={{uri: selectedMeal.imageUrl}} />
@@ -32,11 +24,7 @@ export default function MealDetailScreen({route}) {
                     <Subtitle>Ingredients</Subtitle>
                     <List data={selectedMeal.ingredients} />
                     <Subtitle>steps</Subtitle>
-                    <FlatList 
-                        data={selectedMeal.steps}
-                        keyExtractor={item => item}
-                        renderItem={listRender}
-                    />
+                    <List data={selectedMeal.steps} />
                 </View>
             </View>
         </ScrollView>
@@ -61,18 +49,7 @@ const styles = StyleSheet.create({
     detailText: {
         color:'white'
     },
-    ListItem: {
-        borderRadius: 6,
-        paddingHorizontal: 8,
-        paddingVertical: 4,
-        marginVertical: 4,
-        marginHorizontal: 12,
-        backgroundColor: '#e2b497'
-    },
-    listItemText: {
-        color: '#351401',
-        textAlign: 'center'
-    },
+    
     listOuterContainer: {
         alignItems: 'center'
     },
