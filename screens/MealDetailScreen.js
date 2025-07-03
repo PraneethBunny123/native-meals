@@ -2,6 +2,7 @@ import { FlatList, Image, ScrollView, StyleSheet, Text, View } from "react-nativ
 import { MEALS } from "../data/dummy-data";
 import MealDetails from "../components/MealDetails";
 import Subtitle from "../components/Subtitle";
+import List from "../components/List";
 
 export default function MealDetailScreen({route}) {
     const mealId = route.params.id
@@ -29,11 +30,7 @@ export default function MealDetailScreen({route}) {
             <View style={styles.listOuterContainer} >
                 <View style={styles.listContainer} >
                     <Subtitle>Ingredients</Subtitle>
-                    <FlatList 
-                        data={selectedMeal.ingredients}
-                        keyExtractor={item => item}
-                        renderItem={listRender}
-                    />
+                    <List data={selectedMeal.ingredients} />
                     <Subtitle>steps</Subtitle>
                     <FlatList 
                         data={selectedMeal.steps}
@@ -65,7 +62,7 @@ const styles = StyleSheet.create({
         color:'white'
     },
     ListItem: {
-        borderRadius: 60,
+        borderRadius: 6,
         paddingHorizontal: 8,
         paddingVertical: 4,
         marginVertical: 4,
