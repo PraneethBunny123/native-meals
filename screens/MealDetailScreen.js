@@ -1,4 +1,4 @@
-import { FlatList, Image, Text, View } from "react-native";
+import { FlatList, Image, StyleSheet, Text, View } from "react-native";
 import { MEALS } from "../data/dummy-data";
 import MealDetails from "../components/MealDetails";
 
@@ -15,8 +15,8 @@ export default function MealDetailScreen({route}) {
 
     return (
         <View>
-            <Image source={{uri: selectedMeal.imageUrl}} />
-            <Text>Meal detail - {selectedMeal.title}</Text>
+            <Image style={styles.image} source={{uri: selectedMeal.imageUrl}} />
+            <Text style={styles.title} >{selectedMeal.title}</Text>
             <MealDetails 
                 affordability={selectedMeal.affordability} 
                 duration={selectedMeal.duration}
@@ -37,3 +37,20 @@ export default function MealDetailScreen({route}) {
         </View>
     )
 }
+
+const styles = StyleSheet.create({
+    image: {
+        width: '100%',
+        height: 350
+    },
+    title: {
+        fontWeight: 'bold',
+        fontSize: 24,
+        margin: 24,
+        textAlign: 'center',
+        color: 'white'
+    },
+    detailText: {
+        color:'white'
+    }
+})
