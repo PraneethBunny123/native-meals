@@ -1,4 +1,4 @@
-import { Button, Image, ScrollView, StyleSheet, Text, View } from "react-native";
+import { Image, ScrollView, StyleSheet, Text, View } from "react-native";
 import { MEALS } from "../data/dummy-data";
 import MealDetails from "../components/MealDetails";
 import Subtitle from "../components/Subtitle";
@@ -11,14 +11,14 @@ export default function MealDetailScreen({route, navigation}) {
 
     const selectedMeal = MEALS.find(meal => meal.id === mealId)
 
-    function handleTapMe() {
+    function handleIconPress() {
         console.log('pressed');
         
     }
 
     useLayoutEffect(() => {
         navigation.setOptions({
-            headerRight: () => <IconButton title="Tap Me" onPress={handleTapMe} />
+            headerRight: () => <IconButton title="Tap Me" handleIconPress={handleIconPress} />
         })
     }, [])
 
