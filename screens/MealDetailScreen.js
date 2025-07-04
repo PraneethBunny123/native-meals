@@ -3,7 +3,7 @@ import { MEALS } from "../data/dummy-data";
 import MealDetails from "../components/MealDetails";
 import Subtitle from "../components//MealDetail/Subtitle";
 import List from '../components/MealDetail/List';
-import { useContext, useLayoutEffect } from "react";
+import { useContext, useLayoutEffect, useState } from "react";
 import IconButton from "../components/Icon";
 import { FavoritesContext } from "../store/context/favorites-context";
 
@@ -12,9 +12,9 @@ export default function MealDetailScreen({route, navigation}) {
 
     const mealId = route.params.id
 
-    const mealIsFavorite = favoriteMealsCtx.ids.includes(mealId)
 
     const selectedMeal = MEALS.find(meal => meal.id === mealId)
+    const mealIsFavorite = favoriteMealsCtx.ids.includes(mealId)
 
     function handleIconPress() {
         if(mealIsFavorite) {
@@ -34,7 +34,7 @@ export default function MealDetailScreen({route, navigation}) {
                 />
             )
         })
-    }, [])
+    }, [navigation, handleIconPress])
 
     return (
         <ScrollView style={styles.rootContainer}>
