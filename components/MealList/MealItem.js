@@ -4,7 +4,15 @@ import { View } from "react-native";
 import MealDetails from '../MealDetail/MealDetails';
 import { useNavigation } from "@react-navigation/native";
 
-export default function MealItem({title, imageUrl, affordability, complexity, duration, handleMealItemPress}) {
+export default function MealItem({id, title, imageUrl, affordability, complexity, duration, handleMealItemPress}) {
+
+    const navigation = useNavigation()
+
+    function handleMealItemPress() {
+        navigation.navigate("MealDetail", {
+            id: id
+        })
+    }
 
     return (
         <View style={styles.mealItem} >

@@ -1,17 +1,12 @@
 import { View, FlatList, StyleSheet } from "react-native"
 import MealItem from "./MealItem"
 
-export default function MealList({mealsList, navigation}) {
+export default function MealList({mealsList}) {
     function mealOverviewItem(itemData) {
         const item = itemData.item
 
-        function handleMealItemPress() {
-            navigation.navigate("MealDetail", {
-                id: item.id
-            })
-        }
-
         const mealItemProps = {
+            id: item.id,
             title: item.title,
             imageUrl: item.imageUrl,
             affordability: item.affordability,
@@ -20,7 +15,7 @@ export default function MealList({mealsList, navigation}) {
         }
 
         return (
-            <MealItem {...mealItemProps} handleMealItemPress={handleMealItemPress} />
+            <MealItem {...mealItemProps}/>
         )
     }
 

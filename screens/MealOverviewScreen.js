@@ -20,7 +20,6 @@ export default function MealOverviewScreen({route, navigation}) {
     return (
         <MealList 
             mealsList={displayedMeals} 
-            navigation={navigation} 
         />
     )
 }
