@@ -17,8 +17,11 @@ export default function MealDetailScreen({route, navigation}) {
     const selectedMeal = MEALS.find(meal => meal.id === mealId)
 
     function handleIconPress() {
-        console.log('pressed');
-        
+        if(mealIsFavorite) {
+            favoriteMealsCtx.removeFavorite(mealId)
+        } else {
+            favoriteMealsCtx.addFavorite(mealId)
+        }
     }
 
     useLayoutEffect(() => {
