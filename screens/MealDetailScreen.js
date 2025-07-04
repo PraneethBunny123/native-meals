@@ -3,10 +3,13 @@ import { MEALS } from "../data/dummy-data";
 import MealDetails from "../components/MealDetails";
 import Subtitle from "../components/Subtitle";
 import List from "../components/List";
-import { useLayoutEffect } from "react";
+import { useContext, useLayoutEffect } from "react";
 import IconButton from "../components/Icon";
+import { FavoritesContext } from "../store/context/favorites-context";
 
 export default function MealDetailScreen({route, navigation}) {
+    const favoriteMealsCtx = useContext(FavoritesContext)
+
     const mealId = route.params.id
 
     const selectedMeal = MEALS.find(meal => meal.id === mealId)
