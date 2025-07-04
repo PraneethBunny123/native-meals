@@ -5,7 +5,7 @@ export default function IconButton({handleIconPress, icon, color}) {
     return (
         <Pressable 
             onPress={handleIconPress} 
-            style={({pressed}) => pressed && StyleSheet.pressed}    
+            style={({pressed}) => pressed && styles.pressed}    
         >
             <Ionicons name={icon} size={24} color={color} />
         </Pressable>
