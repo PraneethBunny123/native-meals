@@ -1,7 +1,7 @@
 import { Image, ScrollView, StyleSheet, Text, View } from "react-native";
 import { MEALS } from "../data/dummy-data";
-import MealDetails from "../components/MealDetail/MealDetails";
-import Subtitle from "../components/Subtitle";
+import MealDetails from "../components/MealDetails";
+import Subtitle from "../components//MealDetail/Subtitle";
 import List from '../components/MealDetail/List';
 import { useContext, useLayoutEffect } from "react";
 import IconButton from "../components/Icon";

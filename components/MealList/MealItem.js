@@ -1,7 +1,7 @@
 import { StyleSheet } from "react-native";
 import { Image, Pressable, Text, Platform } from "react-native";
 import { View } from "react-native";
-import MealDetails from '../MealDetail/MealDetails';
+import MealDetails from '../MealDetails';
 import { useNavigation } from "@react-navigation/native";
 
 export default function MealItem({id, title, imageUrl, affordability, complexity, duration, handleMealItemPress}) {
