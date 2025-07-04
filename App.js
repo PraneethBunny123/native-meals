@@ -20,7 +20,7 @@ function DrawerNavigator() {
                 sceneContainerStyle: {backgroundColor: '#3f2f25'}
             }}
         >
-            <Drawer.Screen name='categories' component={CategoriesScreen} />
+            <Drawer.Screen name='categories' component={CategoriesScreen} options={{title: 'All Categories'}} />
             <Drawer.Screen name='favorites' component={FavoritesScreen} />
         </Drawer.Navigator>
     )
@@ -48,7 +48,7 @@ export default function App() {
                         }}    
                     />
                     <Stack.Screen name="MealOverview" component={MealOverviewScreen} />
-                    <Stack.Screen name='MealDetail' component={MealDetailScreen} />
+                    <Stack.Screen name='MealDetail' component={MealDetailScreen} options={{title: 'About The Meal'}} />
                 </Stack.Navigator>
             </NavigationContainer>
         </>
