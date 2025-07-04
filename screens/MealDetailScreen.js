@@ -12,6 +12,8 @@ export default function MealDetailScreen({route, navigation}) {
 
     const mealId = route.params.id
 
+    const mealIsFavorite = favoriteMealsCtx.ids.includes(mealId)
+
     const selectedMeal = MEALS.find(meal => meal.id === mealId)
 
     function handleIconPress() {
@@ -23,7 +25,7 @@ export default function MealDetailScreen({route, navigation}) {
         navigation.setOptions({
             headerRight: () => (
                 <IconButton 
-                    icon='star' 
+                    icon={mealIsFavorite ? 'star' : 'star-outline'} 
                     color='white' 
                     handleIconPress={handleIconPress} 
                 />
